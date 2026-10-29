@@ -9,3 +9,16 @@ body.door-workshop{--accent:#e9ad6b;background-image:linear-gradient(#b8822710 1
 body.door-resources{--accent:#d6c28a;background-image:radial-gradient(ellipse 70% 45% at 50% 0%,#86704861,transparent 80%),repeating-linear-gradient(45deg,transparent 0 65px,#d8c18c0b 66px 67px,transparent 68px 130px),radial-gradient(ellipse 50% 65% at 85% 80%,#385c5266,transparent 80%),linear-gradient(160deg,#1b2526,#0b0e13 78%)!important}
 body[class*="door-"] .katya-kicker{color:var(--accent)}body[class*="door-"] .katya-links a[aria-current=page]{border-color:var(--accent);color:var(--accent)}body[class*="door-"] .katya-brand{color:var(--accent)}
 @media(max-width:700px){body[class*="door-"]{background-attachment:scroll!important}}
+
+/* Individual illustrated room backdrops: artwork behind, text above */
+body[class*="door-"]{position:relative;isolation:isolate;min-height:100vh}
+body[class*="door-"]::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-position:center top;background-repeat:no-repeat;background-size:cover;opacity:.24;filter:saturate(1.2)}
+body.door-paths::before{background-image:url("./art/paths.svg")}
+body.door-atlas::before{background-image:url("./art/atlas.svg")}
+body.door-interests::before{background-image:url("./art/interests.svg")}
+body.door-workshop::before{background-image:url("./art/workshop.svg")}
+body.door-resources::before{background-image:url("./art/resources.svg")}
+body[class*="door-"] main{position:relative;z-index:1}
+body[class*="door-"] .card,body[class*="door-"] .topic{background-color:#101721e8;backdrop-filter:blur(6px)}
+@media(min-width:1000px){body[class*="door-"]::before{background-size:min(80vw,1000px) auto;background-position:right -100px top -140px;opacity:.31}}
+@media(prefers-reduced-transparency:reduce){body[class*="door-"] .card,body[class*="door-"] .topic{backdrop-filter:none;background-color:#101721}}
