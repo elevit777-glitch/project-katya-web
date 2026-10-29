@@ -22,3 +22,16 @@ body[class*="door-"] main{position:relative;z-index:1}
 body[class*="door-"] .card,body[class*="door-"] .topic{background-color:#101721e8;backdrop-filter:blur(6px)}
 @media(min-width:1000px){body[class*="door-"]::before{background-size:min(80vw,1000px) auto;background-position:right -100px top -140px;opacity:.31}}
 @media(prefers-reduced-transparency:reduce){body[class*="door-"] .card,body[class*="door-"] .topic{backdrop-filter:none;background-color:#101721}}
+
+/* Immersive interior presentation: art visible while content stays readable */
+body[class*="door-"]::before{opacity:.58!important;background-position:center top!important;background-size:cover!important;filter:saturate(1.35) contrast(1.07)!important}
+body[class*="door-"]::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#06090e99,#06090e3d 48%,#06090e99),linear-gradient(180deg,#080a10aa 0%,transparent 34%,#080a10bb 100%)}
+body[class*="door-"] main{z-index:1;position:relative}
+body[class*="door-"] .katya-nav{background:#0c111ac7;border:1px solid #b9966144;border-radius:18px;padding:14px 18px;box-shadow:0 12px 45px #0008;backdrop-filter:blur(12px)}
+body[class*="door-"] .katya-kicker{display:inline-block;padding:8px 14px;border:1px solid #e2b97e88;background:#0b111bd9;border-radius:30px;letter-spacing:.17em}
+body[class*="door-"] h1{color:#ffdfaa;text-shadow:0 2px 1px #21160b,0 0 28px #f4bb5c44,0 10px 28px #000}
+body[class*="door-"] .card,body[class*="door-"] .topic{background:linear-gradient(145deg,#111b2af0,#0b0e16ee)!important;border:1px solid #b58b56aa!important;box-shadow:inset 0 0 0 1px #e6c08a19,0 20px 50px #0009!important}
+body[class*="door-"] .lead{background:#0b111bc9;padding:12px 16px;border-left:2px solid #e6bd7e;border-radius:0 12px 12px 0;backdrop-filter:blur(7px)}
+body.door-workshop #start-area,body.door-workshop .panel{box-shadow:0 20px 55px #000d,inset 0 0 0 2px #bb90543a!important}
+@media(min-width:1000px){body[class*="door-"]::before{background-size:min(100vw,1400px) auto!important;background-position:center top -180px!important}}
+@media(max-width:700px){body[class*="door-"]::before{opacity:.46!important;background-size:auto 1100px!important;background-position:center top!important}body[class*="door-"] .katya-nav{padding:10px}}
